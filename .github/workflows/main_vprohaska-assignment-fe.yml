@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'vprohaska-assignment-FE'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_89813D87D2C3468DA1BBA5CE78C7EDBF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_48979CC2BB6C46FE97906A8CB6C5E7B1 }}
           package: .
