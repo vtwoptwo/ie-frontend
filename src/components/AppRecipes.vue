@@ -250,7 +250,7 @@
 
 
 import axios from 'axios'
-import { set } from 'vue/types/umd';
+
 export default
 {
   name: 'AppRecipes',

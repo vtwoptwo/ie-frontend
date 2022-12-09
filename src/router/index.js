@@ -3,14 +3,11 @@ import VueRouter from 'vue-router'
 import AppRecipes from '../components/AppRecipes.vue'
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/skull',
-    name: 'Skull',
-    component: Skull
-  },
+
 
   {
     path: '/recipes',

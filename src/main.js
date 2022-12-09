@@ -1,8 +1,9 @@
 import Vue from 'vue'
+import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
-import BootstrapVue from "bootstrap-vue";
+import { BootstrapVue } from 'bootstrap-vue'
 import { FormRatingPlugin } from 'bootstrap-vue'
 Vue.use(FormRatingPlugin)
 import { IconsPlugin } from 'bootstrap-vue'
