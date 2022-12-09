@@ -77,7 +77,8 @@
               </div>
           </div>
           <!-- Beginning of Modal for Create Recipe-->
-              <div>   <b-modal 
+              <div>   
+            <b-modal 
               ref = "addRecipeModal"
               id="recipe-modal"
               title="Add Recipe"
@@ -114,6 +115,7 @@
               required
               ></b-form-input>
               </b-form-group>
+
               <b-form-group
               id="form-instructions-group"
               label="Recipe Instructions:"
@@ -159,64 +161,64 @@
           <!-- End of Modal for Create Recipe-->
 
           <!-- Beginning of Modal for Edit Recipe-->
+     
+                
           <b-modal
-          ref = "editRecipeModal"
-          id="edit-recipe-modal"
-          title="Edit Recipe"
-          hide-backdrop
-          hide-footer
+            ref = "editRecipeModal"
+            id="edit-recipe-modal"
+            title="Edit Recipe"
+            hide-backdrop
+            hide-footer
           >
           <b-form @submit="onSubmitUpdate" class="w-100">
           <b-form-group
-          id="form-name-group"
+          id="form-edit-name-group"
           label="Recipe Name:"
-          label-for="form-name-input"
+          label-for="form-edit-name-input"
           description="Enter the name of the recipe."
           >
           <b-form-input
-          id="form-name-input"
+          id="form-edit-name-input"
           type="text"
           v-model="updateRecipeForm.name"
-          placeholder="Recipe Name"
+            >
+          </b-form-input>
+          </b-form-group>
+          <b-form-group
+          id="form-edit-ingredients-group"
+          label="Recipe Ingredients:"
+          label-for="form-edit-ingredients-input"
+          description="Enter the ingredients of the recipe."
+          >
+          <b-form-input
+          id="form-edit-ingredients-input"
+          type="text"
+          v-model="updateRecipeForm.ingredients"
           
           >
           </b-form-input>
           </b-form-group>
           <b-form-group
-          id="form-ingredients-group"
-          label="Recipe Ingredients:"
-          label-for="form-ingredients-input"
-          description="Enter the ingredients of the recipe."
-          >
-          <b-form-input
-          id="form-ingredients-input"
-          type="text"
-          v-model="updateRecipeForm.ingredients"
-          placeholder="Recipe Ingredients"
-          >
-          </b-form-input>
-          </b-form-group>
-          <b-form-group
-          id="form-instructions-group"
+          id="form-edit-instructions-group"
           label="Recipe Instructions:"
-          label-for="form-instructions-input"
+          label-for="form-edit-instructions-input"
           description="Enter the instructions of the recipe."
           >
           <b-form-input
 
-          id="form-instructions-input"
+          id="form-edit-instructions-input"
           type="text"
           v-model="updateRecipeForm.instructions"
-          placeholder="Recipe Instructions"
+          
           >
           </b-form-input>
           </b-form-group>
 
           <b-form-group
 
-          id="form-favorite-group"
+          id="form-edit-favorite-group"
           label="Recipe Favorite:"
-          label-for="form-favorite-input"
+          label-for="form-edit-favorite-input"
           description="Let us know if you want to favorite this recipe"
           >
           <b-form-checkbox
@@ -226,25 +228,27 @@
           ></b-form-checkbox>
           </b-form-group>
           <b-form-group
-          id="form-rating-group"
+          id="form-edit-rating-group"
           label="Recipe Rating:"
-          label-for="form-rating-input"
+          label-for="form-edit-rating-input"
           description="Rate this recipe from 1-5"
           >
           <b-form-rating
-          id="form-rating-input"
+          id="form-edit-rating-input"
           type="integer"
           v-model="updateRecipeForm.rating"
+          
           ></b-form-rating>
           </b-form-group>
-  
-          <b-button type="submit" variant="primary">Update</b-button>
+          <b-button type="submit" variant="outline-info">Update</b-button>
           </b-form>
           </b-modal>
           <!-- End of Modal for Edit Recipe-->
 
+
       </div>
-      <btn class="btn btn-primary" @click=gotohome()>Back To Home</btn>
+  
+    <button class="btn btn-primary" @click=gotohome()>Back To Home</button>
   
   </div>
 </div>
@@ -257,27 +261,27 @@
 
 
 import axios from 'axios';
-export default
-{
+export default {
   name: 'AppRecipes',
-  data()
-  {
+  data(){
       return {
           recipes: [],
           createRecipeForm: {
-              name: '',
-              ingredients: '',
-              instructions: '',
-              favorite: false,
-              rating: 0
+                id: '',
+                name: '',
+                ingredients: '',
+                instructions: '',
+                favorite: false,
+                rating: 0,
           },
 
           updateRecipeForm: {
-              name: '',
-              ingredients: '',
-              instructions: '',
-              favorite: false,
-              rating: 0
+                id: '',
+                name: '',
+                ingredients: '',
+                instructions: '',
+                favorite: false,
+                rating: 0,
           },
 
           showMessage: false,
@@ -290,8 +294,13 @@ export default
     gotohome(){
             this.$router.push('/')
         },
+
+    /***************************************************
+     * RESTful requests
+     ***************************************************/
     
       //GET Recipes
+
       RESTgetRecipes() {
       const path = `${process.env.VUE_APP_ROOT_URL}/recipes`;
       axios
@@ -306,12 +315,12 @@ export default
 
       //POST Recipes
       RESTcreateRecipe(payload){
-          const path = `${process.env.VUE_APP_ROOT_URL}recipes`;
+          const path = `${process.env.VUE_APP_ROOT_URL}/recipes`;
           axios
               .post(path,payload)
               .then((response) => {
                   this.RESTgetRecipes();
-                  this.message = "Account Created succesfully!";
+                  this.message = "Recipe created succesfully!";
                   // To actually show the message
                   this.showMessage = true;
                   // To hide the message after 3 seconds
@@ -326,13 +335,12 @@ export default
       },
 
       RESTupdateRecipe(payload, recipeId){
-          const path = `${process.env.VUE_APP_ROOT_URL}recipes/${recipeId}`;
+          const path = `${process.env.VUE_APP_ROOT_URL}/recipes/${recipeId}`;
           axios
               .put(path,payload)
               .then((response) => {
                   this.RESTgetRecipes();
-
-                    this.message = "Recipe Updated Successfully"
+                    this.message = "Recipe updated Successfully!"
                     this.showMessage = true;
                     setTimeout(() => {
                         this.showMessage = false;
@@ -347,12 +355,12 @@ export default
 
 
       RESTdeleteRecipe(id){
-          const path = `${process.env.VUE_APP_ROOT_URL}recipes/${id}`;
+          const path = `${process.env.VUE_APP_ROOT_URL}/recipes/${id}`;
           axios
               .delete(path)
               .then((response) => {
                   this.RESTgetRecipes();
-                  this.message = "Recipe Deleted Successfully"
+                  this.message = "Recipe deleted successfully!"
                   this.showMessage = true;
                   set.TimeOut(() => {
                       this.showMessage = false;
@@ -405,16 +413,16 @@ export default
               favorite: this.updateRecipeForm.favorite,
               rating: this.updateRecipeForm.rating
           };
-          this.RESTupdateRecipe(payload);
+          this.RESTupdateRecipe(payload, this.updateRecipeForm.id);
           this.initForm();
       },
 
-      deleteRecipe(id) {
-          this.RESTdeleteRecipe(id);
+      deleteRecipe(recipe) {
+          this.RESTdeleteRecipe(recipe.id);
       },
 
       editRecipe(recipe) {
-          this.RESTeditRecipe(recipe);
+          this.updateRecipeForm = recipe;
       },
 
       

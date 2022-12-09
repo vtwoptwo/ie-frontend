@@ -12,6 +12,9 @@
             Food 🍔
         </button>
         </div>
+        <br>
+        <br>
+        <br>
         <p>{{ msg }}</p>
     </div>
 </template>
@@ -43,7 +46,7 @@ export default
 </script>
 <style scoped>
 h1 {
-padding:10%;
+padding:0%;
   text-align: center;
 }
 .center {
@@ -62,7 +65,7 @@ div.btn{
 
   position: absolute;
 
-  top: 50%;
+  top: 40%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
