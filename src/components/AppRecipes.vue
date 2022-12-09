@@ -30,7 +30,7 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr v-for="recipe in recipes" :key = "recipe.id">
+                          <tr v-for= "recipe in recipes" :key = "recipe.id">
                               <td> {{ recipe.name }} </td>
                               <td> {{ recipe.ingredients }} </td>
                               <td> {{ recipe.instructions }} </td>
@@ -41,6 +41,12 @@
                                   <b-icon v-if="(recipe.favorite == false)" icon="heart">
                                   </b-icon>
                               </td>
+                                <td> 
+                                    <div>
+                                        <b-form-rating v-model= "recipe.rating" readonly variant="warning" class="mb-2"></b-form-rating>
+                                        <p class="mt-2"></p>
+                                    </div> 
+                                 </td>
                               
                                <td> 
                                   <div class="btn-group" role="group">
@@ -238,6 +244,7 @@
           <!-- End of Modal for Edit Recipe-->
 
       </div>
+      <btn class="btn btn-primary" @click=gotohome()>Back To Home</btn>
   
   </div>
 </div>
@@ -279,6 +286,11 @@ export default
       };
   },
   methods: {
+
+    gotohome(){
+            this.$router.push('/')
+        },
+    
       //GET Recipes
       RESTgetRecipes() {
       const path = `${process.env.VUE_APP_ROOT_URL}/recipes`;

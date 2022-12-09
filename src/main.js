@@ -4,8 +4,8 @@ import App from './App.vue'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import { BootstrapVue } from 'bootstrap-vue'
-import { FormRatingPlugin } from 'bootstrap-vue'
-Vue.use(FormRatingPlugin)
+import { BFormRating } from 'bootstrap-vue'
+Vue.component('b-form-rating', BFormRating)
 import { IconsPlugin } from 'bootstrap-vue'
 Vue.use(IconsPlugin)
 Vue.use(BootstrapVue)

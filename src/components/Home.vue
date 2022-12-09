@@ -1,13 +1,16 @@
 <template>
     <div>
-        <img class="center" src="../assets/skull.jpeg" alt="skull"></img>
+        <img class="center" src="../assets/droid.jpeg" alt="droid"></img>
         <h1>Skull</h1>
         
         <div class="btn">
-        <button v-on:click=gotohome() type="button" class="btn btn-secondary" >
-            go back
+        <button v-on:click=gotoskull() type="button" class="btn btn-primary" >
+            Skull 💀
         </button>
         
+        <button  v-on:click=gotoapp()  type="button" class="btn btn-secondary" >
+            Food 🍔
+        </button>
         </div>
         <p>{{ msg }}</p>
     </div>
@@ -21,27 +24,21 @@ export default
     data()
     {
         return {
-            msg: 'Hi! This is the skull component 💀'
+            msg: 'Welcome to this oddly primitive webapp!'
         }
     },
-    methods:
+    methods: 
     {
-        getSkull()
-        {
-            axios.get('http://localhost:5000/skull')
-            .then(response => (this.msg = response.data))
-            .catch(error => console.log(error))
+        gotoskull(){
+            this.$router.push('/skull')
         },
-        
-        gotohome(){
-            this.$router.push('/')
+
+        gotoapp(){
+            this.$router.push('/recipes/')
         }
-    },
-    created()
-    {
-        this.getSkull()
+
     }
-    
+
 }
 </script>
 <style scoped>
@@ -50,23 +47,27 @@ padding:10%;
   text-align: center;
 }
 .center {
-  display: block;
+  displaY: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 10%;
 }
 p{
     padding:10%;
     text-align: center;
 }
+
 div.btn{
-    padding: 10%;
-    
-    margin: 0;
+    padding: 20%;
+
   position: absolute;
+
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+.btn-primary{
+    margin: 20%;
 }
 </style>
