@@ -170,7 +170,7 @@
           <b-form-input
           id="form-name-input"
           type="text"
-          v-model="editRecipeForm.name"
+          v-model="updateRecipeForm.name"
           placeholder="Recipe Name"
           
           >
@@ -185,7 +185,7 @@
           <b-form-input
           id="form-ingredients-input"
           type="text"
-          v-model="editRecipeForm.ingredients"
+          v-model="updateRecipeForm.ingredients"
           placeholder="Recipe Ingredients"
           >
           </b-form-input>
@@ -200,7 +200,7 @@
 
           id="form-instructions-input"
           type="text"
-          v-model="editRecipeForm.instructions"
+          v-model="updateRecipeForm.instructions"
           placeholder="Recipe Instructions"
           >
           </b-form-input>
@@ -215,7 +215,7 @@
           >
           <b-form-checkbox
           id="form-favorite-input"
-          v-model="editRecipeForm.favorite"
+          v-model="updateRecipeForm.favorite"
           switch
           ></b-form-checkbox>
           </b-form-group>
@@ -228,7 +228,7 @@
           <b-form-rating
           id="form-rating-input"
           type="integer"
-          v-model="editRecipeForm.rating"
+          v-model="updateRecipeForm.rating"
           ></b-form-rating>
           </b-form-group>
   
@@ -249,8 +249,7 @@
 <script>
 
 
-import axios from 'axios'
-
+import axios from 'axios';
 export default
 {
   name: 'AppRecipes',
@@ -266,7 +265,7 @@ export default
               rating: 0
           },
 
-          editRecipeForm: {
+          updateRecipeForm: {
               name: '',
               ingredients: '',
               instructions: '',
@@ -295,7 +294,7 @@ export default
 
       //POST Recipes
       RESTcreateRecipe(payload){
-          const path = `${process.env.VUE_APP_ROOT_URL}/recipes`;
+          const path = `${process.env.VUE_APP_ROOT_URL}recipes`;
           axios
               .post(path,payload)
               .then((response) => {
@@ -305,7 +304,7 @@ export default
                   this.showMessage = true;
                   // To hide the message after 3 seconds
                   setTimeout(() => {
-                      this.showMessage = false;
+                    this.showMessage = false;
                   }, 3000);
               })
               .catch((error) => {
@@ -315,11 +314,18 @@ export default
       },
 
       RESTupdateRecipe(payload, recipeId){
-          const path = `${process.env.VUE_APP_ROOT_URL}/recipes/${recipeId}`;
+          const path = `${process.env.VUE_APP_ROOT_URL}recipes/${recipeId}`;
           axios
               .put(path,payload)
               .then((response) => {
                   this.RESTgetRecipes();
+
+                    this.message = "Recipe Updated Successfully"
+                    this.showMessage = true;
+                    setTimeout(() => {
+                        this.showMessage = false;
+                    }, 3000);
+                    
               })
               .catch((error) => {
                   console.log(error);
@@ -329,7 +335,7 @@ export default
 
 
       RESTdeleteRecipe(id){
-          const path = `${process.env.VUE_APP_ROOT_URL}/recipes/${id}`;
+          const path = `${process.env.VUE_APP_ROOT_URL}recipes/${id}`;
           axios
               .delete(path)
               .then((response) => {
@@ -381,11 +387,11 @@ export default
           evt.preventDefault(); 
           this.$refs.editRecipeModal.hide(); 
           const payload = {
-              name: this.editRecipeForm.name,
-              ingredients: this.editRecipeForm.ingredients,
-              instructions: this.editRecipeForm.instructions,
-              favorite: this.editRecipeForm.favorite,
-              rating: this.editRecipeForm.rating
+              name: this.updateRecipeForm.name,
+              ingredients: this.updateRecipeForm.ingredients,
+              instructions: this.updateRecipeForm.instructions,
+              favorite: this.updateRecipeForm.favorite,
+              rating: this.updateRecipeForm.rating
           };
           this.RESTupdateRecipe(payload);
           this.initForm();
