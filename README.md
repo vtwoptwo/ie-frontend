@@ -176,13 +176,26 @@ You will need the following software downloaded on your workstation:
 
 ## Usage
 
-Play the game in a CLI!
 
 <div align="center">
-  <a href="https://github.com/vtwoptwo/ie-backend/blob/main/images/TicTacToe_CLI_Demo.JPG">
-    <img src="https://github.com/vtwoptwo/ie-backend/blob/main/images/Cpp_logo.png">
-  </a>
+    <img src="img\homepage.JPG">
 </div>
+<div align="center">
+    <img src="img\recipes.JPG">
+</div>
+
+<div align="center">
+    <img src="img\createrecipe.JPG">
+</div>
+
+<div align="center">
+    <img src="img\editrecipe.JPG">
+</div>
+
+<div align="center">
+    <img src="img\updaterecipe.JPG">
+</div>
+
 
 
 
