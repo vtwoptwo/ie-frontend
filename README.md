@@ -503,9 +503,14 @@ Vue.use(BootstrapVue)
 
 
 
-### Creating Different Pipelines
-
-
+### GitHub Actions
+* Workflows stored as yml files 
+* fullly integrated with GitHub
+* Respond to GitHub events
+* Live logs and visualized workflow execution 
+* community powered workflows
+* GitHub hosted or self-hosted runners
+* Built-in secret store
   
 
  
