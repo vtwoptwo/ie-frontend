@@ -1,4 +1,4 @@
-name: Build & Deploy -dev-FE
+name: Build & Deploy -prod-FE
 
 on:
   push:
