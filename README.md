@@ -101,11 +101,14 @@ Functional requirements:
 * [![VueJs][Vue.js]][Vue-url]
 * [![Postgres][Postgres]][Postgres-url]
 * [![Flask][Flask]][Flask-url]
+* ![Bicep](https://img.shields.io/badge/BICEP-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
+
 
 ### Tools Used
 
 * [![Postman][Postman]][Postman-url]
 * [![Docker][Docker]][Docker-url]
+* ![Azure](https://img.shields.io/badge/BICEP-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
 
 
@@ -320,6 +323,10 @@ r1 = Recipe(name="Soup", ingredients="veggies,vegeta,water,chicken", instruction
   db.session.add(r1)
   db.session.commit()
 ```
+run the backend
+```sh
+py ./run.py
+```
 
 ### Frontend
 Implementing vue.js
@@ -503,7 +510,7 @@ Vue.use(BootstrapVue)
 
 
 
-### GitHub Actions
+### Implementing CI/CD
 * Workflows stored as yml files 
 * fullly integrated with GitHub
 * Respond to GitHub events
@@ -512,7 +519,13 @@ Vue.use(BootstrapVue)
 * GitHub hosted or self-hosted runners
 * Built-in secret store
   
+To understand the infrastructure see the following diagram: 
 
+<div align="center">
+    <img src="img\infra.jpg">
+</div>
+
+To seethe infrastructure as code written in Bicep, refer to: [IaC](https://github.com/vtwoptwo/ie-IaC/issues)
  
  
 
