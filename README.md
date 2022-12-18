@@ -522,7 +522,7 @@ Vue.use(BootstrapVue)
 To understand the infrastructure see the following diagram: 
 
 <div align="center">
-    <img src="img\infra.JPG">
+    <img src="img\infra.jpg">
 </div>
 
 To seethe infrastructure as code written in Bicep, refer to: [IaC](https://github.com/vtwoptwo/ie-IaC/issues)
