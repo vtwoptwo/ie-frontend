@@ -20,6 +20,16 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Create .env for development
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          echo "${{ secrets.ENV_DEV_FILE }}" > .env
+
+      - name: Create .env for production
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "${{ secrets.ENV_PROD_FILE }}" > .env
+
       - name: npm install, build, and test
         run: |
           npm install
