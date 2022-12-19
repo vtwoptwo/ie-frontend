@@ -1,12 +1,7 @@
 
-name: Build & Deploy Conditional
+name: Build & Deploy Conditional 
 
-on:
-  push:
-    branches:
-      - main
-      - dev
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
 
@@ -32,8 +27,8 @@ jobs:
           name: node-app
           path: .
 
+
   deploy-dev:
-    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     environment:
       name: 'Production'
@@ -53,7 +48,7 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_04604792B1B747E394609FADF4904C33 }}
           package: .
-  
+
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
