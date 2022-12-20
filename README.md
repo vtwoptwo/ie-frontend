@@ -108,7 +108,7 @@ Functional requirements:
 
 * [![Postman][Postman]][Postman-url]
 * [![Docker][Docker]][Docker-url]
-* ![Azure](https://img.shields.io/badge/BICEP-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
+* ![Azure](https://img.shields.io/badge/Azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
 
 
