@@ -655,16 +655,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vtwoptwo/ie-backend.svg?style=for-the-badge
-[contributors-url]: https://github.com/vtwoptwo/ie-backend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vtwoptwo/ie-backend.svg?style=for-the-badge
-[forks-url]: https://github.com/vtwoptwo/ie-backend/network/members
-[stars-shield]: https://img.shields.io/github/stars/vtwoptwo/ie-backend.svg?style=for-the-badge
-[stars-url]: https://github.com/vtwoptwo/ie-backend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vtwoptwo/ie-backend.svg?style=for-the-badge
-[issues-url]: https://github.com/vtwoptwo/ie-backend/issues
-[license-shield]: https://img.shields.io/github/license/vtwoptwo/ie-backend.svg?style=for-the-badge
-[license-url]: https://github.com/vtwoptwo/ie-backend/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/vtwoptwo/ie-frontend.svg?style=for-the-badge
+[contributors-url]: https://github.com/vtwoptwo/ie-frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vtwoptwo/ie-frontend.svg?style=for-the-badge
+[forks-url]: https://github.com/vtwoptwo/ie-frontend/network/members
+[stars-shield]: https://img.shields.io/github/stars/vtwoptwo/ie-frontend.svg?style=for-the-badge
+[stars-url]: https://github.com/vtwoptwo/ie-frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vtwoptwo/ie-frontend.svg?style=for-the-badge
+[issues-url]: https://github.com/vtwoptwo/ie-frontend/issues
+[license-shield]: https://img.shields.io/github/license/vtwoptwo/ie-frontend.svg?style=for-the-badge
+[license-url]: https://github.com/vtwoptwo/ie-frontend/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/vera-prohaska-31734b1b5/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
